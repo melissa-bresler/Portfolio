@@ -1,9 +1,35 @@
-// src/components/Navbar.tsx
-import React from "react";
-import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import React, { useState } from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  Menu,
+  MenuItem,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
+  // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  // const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+
+  // const handleMenuClose = () => {
+  //   setAnchorEl(null);
+  // };
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -11,9 +37,48 @@ const Navbar: React.FC = () => {
           My Portfolio
         </Typography>
         <Box sx={{ display: "flex", gap: 2 }}>
-          <Button color="inherit" component={Link} to="/">
-            Home
-          </Button>
+          {/* <div>
+            <Button
+              color="inherit"
+              component={Link} // Link to the home page
+              to="/"
+              onMouseOver={handleMenuOpen} // Open dropdown on hover
+              onMouseLeave={handleMenuClose} // Close dropdown on mouse leave
+            >
+              Home
+            </Button>
+            <Menu
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={handleMenuClose}
+              onMouseLeave={handleMenuClose} // Close dropdown on mouse leave
+            >
+              <MenuItem component={Link} to="/">
+                Main Home
+              </MenuItem>
+            </Menu>
+          </div> */}
+          <div>
+            <Button
+              color="inherit"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+            >
+              Dashboard
+            </Button>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+            >
+              <MenuItem component={Link} to="/game">
+                Game
+              </MenuItem>
+            </Menu>
+          </div>
           <Button color="inherit" component={Link} to="/about">
             About
           </Button>

@@ -1,10 +1,10 @@
-// src/App.tsx
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Game1 from "./pages/Game1"; // Import the new component
 
 const App: React.FC = () => {
   return (
@@ -14,11 +14,11 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/game" element={<Game1 />} /> {/* TODO: Edit name later */}
       </Routes>
     </Router>
   );
 };
 
 export default App;
-
 // useful link for getting started: https://create-react-app.dev/docs/getting-started
