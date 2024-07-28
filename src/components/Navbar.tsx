@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   AppBar,
   Toolbar,
@@ -32,9 +32,9 @@ const Navbar: React.FC = () => {
 
   return (
     <AppBar position="static">
-      <Toolbar>
+      <Toolbar sx={{ background: "black" }}>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          My Portfolio
+          MELISSA BRESLER
         </Typography>
         <Box sx={{ display: "flex", gap: 2 }}>
           {/* <div>
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
               aria-expanded={open ? "true" : undefined}
               onClick={handleClick}
             >
-              Dashboard
+              Home
             </Button>
             <Menu
               id="basic-menu"
