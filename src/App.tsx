@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Game1 from "./pages/Game1"; // Import the new component
+import AdventureExe from "./pages/games/AdventureExe"; // Import the new component
 
 const App: React.FC = () => {
   return (
@@ -14,7 +14,8 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/game" element={<Game1 />} /> {/* TODO: Edit name later */}
+        <Route path="/game" element={<AdventureExe />} />{" "}
+        {/* TODO: Edit name later */}
       </Routes>
     </Router>
   );
