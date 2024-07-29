@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import AdventureExe from "./pages/games/AdventureExe"; // Import the new component
+import AdventureExe from "./pages/games/AdventureExe";
+import MemoryMeltdown from "./pages/games/memoryMeltdown";
 
 const App: React.FC = () => {
   return (
@@ -14,8 +15,8 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/game" element={<AdventureExe />} />{" "}
-        {/* TODO: Edit name later */}
+        <Route path="/adventureExe" element={<AdventureExe />} />{" "}
+        <Route path="/memory-meltdown" element={<MemoryMeltdown />} />{" "}
       </Routes>
     </Router>
   );

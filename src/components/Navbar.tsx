@@ -74,8 +74,11 @@ const Navbar: React.FC = () => {
               open={open}
               onClose={handleClose}
             >
-              <MenuItem component={Link} to="/game">
-                Game
+              <MenuItem component={Link} to="/adventureExe">
+                Adventure.exe
+              </MenuItem>
+              <MenuItem component={Link} to="/memory-meltdown">
+                Memory Meltdown
               </MenuItem>
             </Menu>
           </div>
