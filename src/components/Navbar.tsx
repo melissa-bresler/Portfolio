@@ -9,7 +9,8 @@ import {
   MenuItem,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-
+// TODO: Should appear/disappear on hover
+// FIXME: Navbar doesn't disappear once an option has been clicked
 const Navbar: React.FC = () => {
   // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 

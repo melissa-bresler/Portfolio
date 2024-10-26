@@ -1,10 +1,10 @@
 import React from "react";
-import { Container, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Container } from "@mui/material";
 import BlogEntry from "../../components/BlogEntry";
 import GameBreakdown from "../../components/GameBreakdown";
 import swiflogo from "../../assets/swift-logo.png";
 import xcodelogo from "../../assets/xcode-logo.png";
+import { BackToHomeButton } from "../../components/BackToHomeButton";
 
 const memoryMeltdown: React.FC = () => {
   const gameDescription =
@@ -28,10 +28,7 @@ const memoryMeltdown: React.FC = () => {
         }}
       />
       <div style={{ margin: 50 }} />
-      {/* TODO: Make Back to home button a separate component and change styling */}
-      <Button variant="contained" component={Link} to="/" sx={{ marginTop: 2 }}>
-        Back to Home
-      </Button>
+      <BackToHomeButton />
     </Container>
   );
 };

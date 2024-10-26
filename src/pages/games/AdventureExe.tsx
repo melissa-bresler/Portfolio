@@ -1,11 +1,11 @@
 import React from "react";
-import { Container, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Container } from "@mui/material";
 import BlogEntry from "../../components/BlogEntry";
 import GameBreakdown from "../../components/GameBreakdown";
 import conceptArt from "../../assets/adventureExe-concept-art.jpg";
 import csharplogo from "../../assets/c-sharp-logo.png";
 import unitylogo from "../../assets/unity-logo.png";
+import { BackToHomeButton } from "../../components/BackToHomeButton";
 
 const AdventureExe: React.FC = () => {
   const gameDescription =
@@ -30,10 +30,16 @@ const AdventureExe: React.FC = () => {
         }}
       />
       <div style={{ margin: 50 }} />
-
-      <Button variant="contained" component={Link} to="/" sx={{ marginTop: 2 }}>
-        Back to Home
-      </Button>
+      <BlogEntry
+        date="2024-07-28"
+        // TODO: Blog entry
+        blogText={"Blog entry text"}
+        image={conceptArt}
+        imageAlt={"Concept Art"}
+        switchSides={false}
+        keyChanges={["change 1", "change 2", "change 3"]}
+      />
+      <BackToHomeButton />
     </Container>
   );
 };
