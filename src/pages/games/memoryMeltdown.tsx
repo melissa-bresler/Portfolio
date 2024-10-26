@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "@mui/material";
-import BlogEntry from "../../components/BlogEntry";
 import GameBreakdown from "../../components/GameBreakdown";
 import swiflogo from "../../assets/swift-logo.png";
 import xcodelogo from "../../assets/xcode-logo.png";

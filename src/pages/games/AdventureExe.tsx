@@ -6,6 +6,7 @@ import conceptArt from "../../assets/adventureExe-concept-art.jpg";
 import csharplogo from "../../assets/c-sharp-logo.png";
 import unitylogo from "../../assets/unity-logo.png";
 import { BackToHomeButton } from "../../components/BackToHomeButton";
+import UnityGame from "../../components/UnityGame";
 
 const AdventureExe: React.FC = () => {
   const gameDescription =
@@ -29,6 +30,9 @@ const AdventureExe: React.FC = () => {
           alt: "",
         }}
       />
+      {/* TODO: Clean up styling*/}
+      <h1>My Unity Game</h1>
+      <UnityGame />
       <div style={{ margin: 50 }} />
       <BlogEntry
         date="2024-07-28"
