@@ -1,12 +1,12 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import BlogEntry from "../../components/BlogEntry";
 import GameBreakdown from "../../components/GameBreakdown";
 import conceptArt from "../../assets/adventureExe-concept-art.jpg";
 import csharplogo from "../../assets/c-sharp-logo.png";
 import unitylogo from "../../assets/unity-logo.png";
+import aiArt from "../../assets/ai-generated-art.png";
 import { BackToHomeButton } from "../../components/BackToHomeButton";
-import UnityGame from "../../components/UnityGame";
 
 const AdventureExe: React.FC = () => {
   const gameDescription =
@@ -24,24 +24,40 @@ const AdventureExe: React.FC = () => {
           { name: csharplogo, alt: "C# Logo" },
           { name: unitylogo, alt: "Unity Logo" },
         ]}
-        playGame={false}
+        playGame={true}
         gameArt={{
-          name: "",
+          src: "",
           alt: "",
         }}
       />
-      {/* TODO: Clean up styling*/}
-      <h1>My Unity Game</h1>
-      <UnityGame />
       <div style={{ margin: 50 }} />
       <BlogEntry
         date="2024-07-28"
-        // TODO: Blog entry
-        blogText={"Blog entry text"}
+        blogText={
+          "I kicked off development with a clear concept, fleshing out ideas and drafting a design that defines the game’s mechanics, visual style, and story. My planning focused on technical specifications, asset needs, and selecting Unity tools to support the build."
+        }
         image={conceptArt}
         imageAlt={"Concept Art"}
         switchSides={false}
-        keyChanges={["change 1", "change 2", "change 3"]}
+        keyChanges={[
+          "Game concept defined",
+          "Specs and asset list made",
+          "Development plan set",
+        ]}
+      />
+      <BlogEntry
+        date="2024-10-26"
+        blogText={
+          "With planning done, I created a KanBan board to track tasks and streamline workflow. I used AI tools to generate concept art that matches my vision, and I made progress on the Unity build by setting up the main game file and initial interactions."
+        }
+        image={aiArt}
+        imageAlt={"AI Generated Art"}
+        switchSides={true}
+        keyChanges={[
+          "KanBan board created",
+          "Concept art generated",
+          "Unity setup started",
+        ]}
       />
       <BackToHomeButton />
     </Container>

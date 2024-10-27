@@ -12,7 +12,7 @@ const UnityGame: React.FC = () => {
   });
 
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div style={{ width: "100%", height: "90%", paddingLeft: "5%" }}>
       {!isLoaded && <p>Loading... {Math.round(loadingProgression * 100)}%</p>}
       <Unity
         unityProvider={unityProvider}

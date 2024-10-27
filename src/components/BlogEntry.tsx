@@ -13,7 +13,7 @@ const BlogEntry: React.FC<{
 
   return (
     <>
-      <Grid xs={6} display={"flex"}>
+      <Grid xs={6} display={"flex"} sx={{ paddingTop: "5%" }}>
         {!switchSides && (
           <Grid item width={"50%"}>
             <img
@@ -29,7 +29,11 @@ const BlogEntry: React.FC<{
             {displayDate}
           </Typography>
           <Card>
-            <Typography variant="body1" paragraph>
+            <Typography
+              variant="body1"
+              paragraph
+              sx={{ textAlign: "justify", width: "90%" }}
+            >
               {blogText}
             </Typography>
           </Card>

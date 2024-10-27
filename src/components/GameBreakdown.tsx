@@ -1,6 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import { Card } from "./BlogEntry";
 import moment from "moment";
+import UnityGame from "./UnityGame";
 
 const GameBreakdown: React.FC<{
   date: string | Date;
@@ -10,7 +11,7 @@ const GameBreakdown: React.FC<{
   status: string;
   logos: { name: string; alt: string }[];
   playGame: boolean;
-  gameArt: { name: string; alt: string };
+  gameArt: { src: string; alt: string };
 }> = ({
   date,
   description,
@@ -95,12 +96,14 @@ const GameBreakdown: React.FC<{
           </Card>
         </Grid>
         <Grid item width={"50%"} marginLeft={"5px"}>
-          {/* TODO: Embed game here*/}
-          {playGame ? null : (
+          {/* TODO: Make game embed flexible like a variable*/}
+          {playGame ? (
+            <UnityGame />
+          ) : (
             <img
-              src={gameArt.name}
+              src={gameArt.src}
               alt={gameArt.alt}
-              style={{ width: "100%", height: "auto", margin: 5 }}
+              style={{ width: "90%", height: "auto", margin: 5 }}
             />
           )}
         </Grid>

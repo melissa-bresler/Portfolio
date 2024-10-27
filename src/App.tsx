@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AdventureExe from "./pages/games/AdventureExe";
-import MemoryMeltdown from "./pages/games/memoryMeltdown";
+import MemoryMeltdown from "./pages/games/MemoryMeltdown";
 
 const App: React.FC = () => {
   return (
