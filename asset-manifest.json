@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.686d230e.css",
+    "main.js": "/Portfolio/static/js/main.88bb1e1c.js",
+    "static/media/ai-generated-art.png": "/Portfolio/static/media/ai-generated-art.4bcf5dc09b1d9a88a4a6.png",
+    "static/media/unity-logo.png": "/Portfolio/static/media/unity-logo.cc4d93075c0dc6f41dd2.png",
+    "static/media/memory-meltdown.png": "/Portfolio/static/media/memory-meltdown.9920d54ea2e4b08cd331.png",
+    "static/media/adventureExe-concept-art.jpg": "/Portfolio/static/media/adventureExe-concept-art.1a8898c680ed06443543.jpg",
+    "static/media/xcode-logo.png": "/Portfolio/static/media/xcode-logo.dad6f8116afef0ee9841.png",
+    "static/media/swift-logo.png": "/Portfolio/static/media/swift-logo.d0cf8dd3a99e6de3edc6.png",
+    "static/media/c-sharp-logo.png": "/Portfolio/static/media/c-sharp-logo.264ea095991439631bcf.png",
+    "index.html": "/Portfolio/index.html",
+    "main.686d230e.css.map": "/Portfolio/static/css/main.686d230e.css.map",
+    "main.88bb1e1c.js.map": "/Portfolio/static/js/main.88bb1e1c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.686d230e.css",
+    "static/js/main.88bb1e1c.js"
+  ]
+}
