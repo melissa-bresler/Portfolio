@@ -81,6 +81,9 @@ const Navbar: React.FC = () => {
               <MenuItem component={Link} to="/memory-meltdown">
                 Memory Meltdown
               </MenuItem>
+              <MenuItem component={Link} to="/kaaxs-dawn">
+                Kaax's Dawn
+              </MenuItem>
             </Menu>
           </div>
           <Button color="inherit" component={Link} to="/about">

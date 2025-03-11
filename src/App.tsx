@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AdventureExe from "./pages/games/AdventureExe";
 import MemoryMeltdown from "./pages/games/MemoryMeltdown";
+import KaaxsDawn from "./pages/games/KaaxsDawn";
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/adventureExe" element={<AdventureExe />} />{" "}
         <Route path="/memory-meltdown" element={<MemoryMeltdown />} />{" "}
+        <Route path="/kaaxs-dawn" element={<KaaxsDawn />} />{" "}
       </Routes>
     </Router>
   );
