@@ -1,11 +1,13 @@
 import React from "react";
-import { Container, Grid } from "@mui/material";
+import { Container } from "@mui/material";
 import BlogEntry from "../../components/BlogEntry";
 import GameBreakdown from "../../components/GameBreakdown";
 import conceptArt from "../../assets/adventureExe-concept-art.jpg";
 import csharplogo from "../../assets/c-sharp-logo.png";
 import unitylogo from "../../assets/unity-logo.png";
 import aiArt from "../../assets/ai-generated-art.png";
+import proofOfConcept from "../../assets/proof-of-concept.png";
+import initialFunctionality from "../../assets/initial-functionality.png";
 import { BackToHomeButton } from "../../components/BackToHomeButton";
 
 const AdventureExe: React.FC = () => {
@@ -31,20 +33,38 @@ const AdventureExe: React.FC = () => {
         }}
       />
       <div style={{ margin: 50 }} />
+      {/* TODO: Add title for blog entries section */}
+      {/* BLOG ENTRIES  */}
       <BlogEntry
-        date="2024-07-28"
+        date="2025-2-23"
         blogText={
-          "I kicked off development with a clear concept, fleshing out ideas and drafting a design that defines the game’s mechanics, visual style, and story. My planning focused on technical specifications, asset needs, and selecting Unity tools to support the build."
+          "I continued to adjust the concept code to get it functional, however certain functions required more restructuring than others due to the nature of the asynchronous behaviours. Additionally, some developer comands were created that won't be used for the game but allow for the manipulation of the story in order to test features easily."
         }
-        image={conceptArt}
-        imageAlt={"Concept Art"}
-        switchSides={false}
+        image={initialFunctionality}
+        imageAlt={
+          "Running The Basic Game In Unity After Basic Functionality Has Been Built"
+        }
+        switchSides={true}
         keyChanges={[
-          "Game concept defined",
-          "Specs and asset list made",
-          "Development plan set",
+          "More unversal commands generated",
+          "Continued adjustment of code",
+          "Styling changes made",
         ]}
       />
+      <BlogEntry
+        date="2025-1-6"
+        blogText={
+          "As an initial proof of concept a basic terminal based version of the choose your own adventure game was created. Once this was completed, I began the process of converting the code to a Unity friendly version in order to be able to integrate it into the game."
+        }
+        image={proofOfConcept}
+        imageAlt={"Testing Intitial Proof Of Concept Code In VS Code Terminal"}
+        switchSides={false}
+        keyChanges={[
+          "Converted proof of concept code",
+          "Basic objects created to store relevant scripts",
+        ]}
+      />
+
       <BlogEntry
         date="2024-10-26"
         blogText={
@@ -57,6 +77,20 @@ const AdventureExe: React.FC = () => {
           "KanBan board created",
           "Concept art generated",
           "Unity setup started",
+        ]}
+      />
+      <BlogEntry
+        date="2024-07-28"
+        blogText={
+          "I kicked off development with a clear concept, fleshing out ideas and drafting a design that defines the game’s mechanics, visual style, and story. My planning focused on technical specifications, asset needs, and selecting Unity tools to support the build."
+        }
+        image={conceptArt}
+        imageAlt={"Concept Art"}
+        switchSides={false}
+        keyChanges={[
+          "Game concept defined",
+          "Specs and asset list made",
+          "Development plan set",
         ]}
       />
       <BackToHomeButton />
