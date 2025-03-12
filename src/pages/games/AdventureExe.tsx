@@ -8,6 +8,7 @@ import unitylogo from "../../assets/unity-logo.png";
 import aiArt from "../../assets/ai-generated-art.png";
 import proofOfConcept from "../../assets/proof-of-concept.png";
 import initialFunctionality from "../../assets/initial-functionality.png";
+import chapterStats from "../../assets/chapter-stats-introduced.png";
 import { BackToHomeButton } from "../../components/BackToHomeButton";
 
 const AdventureExe: React.FC = () => {
@@ -35,6 +36,20 @@ const AdventureExe: React.FC = () => {
       <div style={{ margin: 50 }} />
       {/* TODO: Add title for blog entries section */}
       {/* BLOG ENTRIES  */}
+      <BlogEntry
+        date="2025-3-7"
+        blogText={
+          "Further developer commands were added for easier testing such as the ability to jump to any chapter with the stats all maxed out for that chapter. Additionally, sections of code were refactored for better readability and efficiency overall."
+        }
+        image={chapterStats}
+        imageAlt={""}
+        switchSides={false} //TODO: Find a way to automate this so that when new entries are added to the top it swtiches sides automatically
+        keyChanges={[
+          "Chapter stats created",
+          "Existing code refactored and improved",
+          "Inclusion of more dev commands",
+        ]}
+      />
       <BlogEntry
         date="2025-2-23"
         blogText={
