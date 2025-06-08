@@ -1,54 +1,29 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Grid,
-  Typography,
-} from "@mui/material";
-import { Link } from "react-router-dom";
+import React from "react";
+import styles from "../styles/GamePreviewCard.module.css";
 
-const GamePreviewCard: React.FC<{
+interface GameCardPreviewProps {
   title: string;
   description: string;
   link: string;
-}> = ({ title, description, link }) => {
+  image?: string;
+}
+
+export const GamePreviewCard: React.FC<GameCardPreviewProps> = ({
+  title,
+  description,
+  link,
+  image,
+}) => {
   return (
-    // {/* TODO: Should have fixed height as tthe boxes are currently different sizes based on the amount of text in them */}
-    <Grid item xs={12} sm={6} md={4}>
-      <Card>
-        <CardContent>
-          <Typography
-            variant="h5"
-            component="div"
-            sx={{ textAlign: "center" }}
-            gutterBottom
-          >
-            {title}
-          </Typography>
-          {/* TODO: Add Preview of some kind here i.e. image */}
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{ textAlign: "justify" }}
-          >
-            {description}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          {/* TODO: On hover button turns white, either stop this or change the style */}
-          <Button
-            size="small"
-            component={Link}
-            to={link}
-            sx={{ color: "white", background: "black" }}
-          >
-            View Game
-          </Button>
-        </CardActions>
-      </Card>
-    </Grid>
+    <div className={styles.card}>
+      {image && <img src={image} alt={title} className={styles.image} />}
+      <div className={styles.content}>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.description}>{description}</p>
+        <a href={link} className={styles.button}>
+          View Game
+        </a>
+      </div>
+    </div>
   );
 };
-
-export default GamePreviewCard;
