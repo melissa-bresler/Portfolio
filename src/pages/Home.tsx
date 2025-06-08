@@ -24,9 +24,10 @@ const Home: React.FC = () => {
       {/* <Typography variant="h4" sx={{ marginTop: 4 }} gutterBottom>
         Games
       </Typography> */}
+      {/* TODO: Make these into their own component (starting from line 30 to 65 i.e. each Grid item) to minimize duplicated code */}
+      {/* TODO: Should have fixed height as tthe boxes are currently different sizes based on the amount of text in them */}
       <Grid container spacing={4}>
         <Grid item xs={12} sm={6} md={4}>
-          {/* TODO: Add card for Kaax's Dawn */}
           <Card>
             <CardContent>
               <Typography
@@ -50,7 +51,7 @@ const Home: React.FC = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              {/* FIXME: On hover button turns white */}
+              {/* TODO: On hover button turns white, either stop this or change the style */}
               <Button
                 size="small"
                 component={Link}
@@ -73,7 +74,6 @@ const Home: React.FC = () => {
               >
                 Memory Meltdown
               </Typography>
-              {/* TODO: Add Preview of some kind here i.e. image */}
               <Typography
                 variant="body2"
                 color="text.secondary"
@@ -85,11 +85,44 @@ const Home: React.FC = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              {/* FIXME: On hover button turns white */}
               <Button
                 size="small"
                 component={Link}
                 to="/memory-meltdown"
+                sx={{ color: "white", background: "black" }}
+              >
+                View Game
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Card>
+            <CardContent>
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{ textAlign: "center" }}
+                gutterBottom
+              >
+                Kaax's Dawn
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ textAlign: "justify" }}
+              >
+                Explore a vibrant 3D world in this adventure game prototype,
+                blending light combat, exploration, and charm—fun for all ages
+                and inspired by games like Stray and Breath of the Wild.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              {/*  */}
+              <Button
+                size="small"
+                component={Link}
+                to="/kaaxs-dawn"
                 sx={{ color: "white", background: "black" }}
               >
                 View Game

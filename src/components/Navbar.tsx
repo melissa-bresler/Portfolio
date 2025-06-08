@@ -89,9 +89,10 @@ const Navbar: React.FC = () => {
           <Button color="inherit" component={Link} to="/about">
             About
           </Button>
-          <Button color="inherit" component={Link} to="/contact">
+          {/* TODO: Uncomment after making page functional */}
+          {/* <Button color="inherit" component={Link} to="/contact">
             Contact
-          </Button>
+          </Button> */}
         </Box>
       </Toolbar>
     </AppBar>
