@@ -11,7 +11,12 @@ const GamePreviewCard: React.FC<Game> = ({
 }) => {
   return (
     <div className={styles.card}>
-      {image && <img src={image} alt={title} className={styles.image} />}
+      {/* <div className={`${styles.card} ${enlarged ? styles.enlarged : ""}`}> */}
+      {image && (
+        <div className={styles.imageWrapper}>
+          <img src={image} alt={title} className={styles.image} />
+        </div>
+      )}
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
