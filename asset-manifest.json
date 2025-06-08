@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.686d230e.css",
-    "main.js": "/Portfolio/static/js/main.88bb1e1c.js",
-    "static/media/ai-generated-art.png": "/Portfolio/static/media/ai-generated-art.4bcf5dc09b1d9a88a4a6.png",
-    "static/media/unity-logo.png": "/Portfolio/static/media/unity-logo.cc4d93075c0dc6f41dd2.png",
-    "static/media/memory-meltdown.png": "/Portfolio/static/media/memory-meltdown.9920d54ea2e4b08cd331.png",
-    "static/media/adventureExe-concept-art.jpg": "/Portfolio/static/media/adventureExe-concept-art.1a8898c680ed06443543.jpg",
-    "static/media/xcode-logo.png": "/Portfolio/static/media/xcode-logo.dad6f8116afef0ee9841.png",
-    "static/media/swift-logo.png": "/Portfolio/static/media/swift-logo.d0cf8dd3a99e6de3edc6.png",
-    "static/media/c-sharp-logo.png": "/Portfolio/static/media/c-sharp-logo.264ea095991439631bcf.png",
-    "index.html": "/Portfolio/index.html",
-    "main.686d230e.css.map": "/Portfolio/static/css/main.686d230e.css.map",
-    "main.88bb1e1c.js.map": "/Portfolio/static/js/main.88bb1e1c.js.map"
+    "main.css": "/static/css/main.686d230e.css",
+    "main.js": "/static/js/main.e65e7560.js",
+    "static/media/ai-generated-art.png": "/static/media/ai-generated-art.4bcf5dc09b1d9a88a4a6.png",
+    "static/media/kd-key-elements.png": "/static/media/kd-key-elements.6d0477beba8dbc8bc04a.png",
+    "static/media/chapter-stats-introduced.png": "/static/media/chapter-stats-introduced.03ad527916b3bb8b831f.png",
+    "static/media/initial-functionality.png": "/static/media/initial-functionality.cf5a602ef83f793ba730.png",
+    "static/media/unity-logo.png": "/static/media/unity-logo.cc4d93075c0dc6f41dd2.png",
+    "static/media/memory-meltdown.png": "/static/media/memory-meltdown.9920d54ea2e4b08cd331.png",
+    "static/media/proof-of-concept.png": "/static/media/proof-of-concept.5dd3a2d2212bf2b6cb97.png",
+    "static/media/adventureExe-concept-art.jpg": "/static/media/adventureExe-concept-art.1a8898c680ed06443543.jpg",
+    "static/media/xcode-logo.png": "/static/media/xcode-logo.dad6f8116afef0ee9841.png",
+    "static/media/swift-logo.png": "/static/media/swift-logo.d0cf8dd3a99e6de3edc6.png",
+    "static/media/c-sharp-logo.png": "/static/media/c-sharp-logo.264ea095991439631bcf.png",
+    "index.html": "/index.html",
+    "main.686d230e.css.map": "/static/css/main.686d230e.css.map",
+    "main.e65e7560.js.map": "/static/js/main.e65e7560.js.map"
   },
   "entrypoints": [
     "static/css/main.686d230e.css",
-    "static/js/main.88bb1e1c.js"
+    "static/js/main.e65e7560.js"
   ]
 }
