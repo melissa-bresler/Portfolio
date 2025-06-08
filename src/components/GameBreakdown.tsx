@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material";
-import { Card } from "./BlogEntry";
 import moment from "moment";
 import UnityGame from "./UnityGame";
+import { Card } from "./Card";
 
 const GameBreakdown: React.FC<{
   date: string | Date;

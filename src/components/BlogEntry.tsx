@@ -1,5 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import moment from "moment";
+import { Card } from "./Card";
 
 const BlogEntry: React.FC<{
   date: string | Date;
@@ -84,11 +85,3 @@ const BlogEntry: React.FC<{
 };
 
 export default BlogEntry;
-
-export const Card: React.FC<{ children: any }> = ({ children }) => {
-  return (
-    <div style={{ display: "flex", justifyContent: "center", margin: "auto" }}>
-      {children}
-    </div>
-  );
-};
