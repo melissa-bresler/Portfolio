@@ -39,7 +39,7 @@ const AdventureExe: React.FC = () => {
         {/* TODO: Add title for blog entries section */}
         {/* BLOG ENTRIES  */}
         <BlogEntry
-          date="2025-3-7"
+          date="2025-03-07"
           blogText={
             "Further developer commands were added for easier testing such as the ability to jump to any chapter with the stats all maxed out for that chapter. Additionally, sections of code were refactored for better readability and efficiency overall."
           }
@@ -53,7 +53,7 @@ const AdventureExe: React.FC = () => {
           ]}
         />
         <BlogEntry
-          date="2025-2-23"
+          date="2025-02-23"
           blogText={
             "I continued to adjust the concept code to get it functional, however certain functions required more restructuring than others due to the nature of the asynchronous behaviours. Additionally, some developer comands were created that won't be used for the game but allow for the manipulation of the story in order to test features easily."
           }
@@ -69,7 +69,7 @@ const AdventureExe: React.FC = () => {
           ]}
         />
         <BlogEntry
-          date="2025-1-6"
+          date="2025-01-06"
           blogText={
             "As an initial proof of concept a basic terminal based version of the choose your own adventure game was created. Once this was completed, I began the process of converting the code to a Unity friendly version in order to be able to integrate it into the game."
           }
