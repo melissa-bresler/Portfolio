@@ -60,11 +60,11 @@ const GameBreakdown: React.FC<{
               <Card>
                 <div
                   style={{
-                    border: "1px solid #ddd",
+                    border: "1px solid var(--lightgrey)",
                     borderRadius: "8px",
-                    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+                    boxShadow: "0 2px 5px var(--lightestgrey)",
                     padding: "5px",
-                    backgroundColor: "#fff",
+                    backgroundColor: "var(--white)",
                   }}
                 >
                   <Typography variant="overline" fontSize={16}>

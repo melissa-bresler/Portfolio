@@ -1,4 +1,36 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  background-color: var(--lightestgrey);
+}
+
+:root {
+  --pink: #ff008c;
+  --yellow: #ffca3a;
+  --black: #000;
+  --lighterblack: #1e1e1e;
+  --darkgrey: #a9a9a9;
+  --lightgrey: #ddd;
+  --lightestgrey: #f0f0f0;
+  --white: #fff;
+}
+
+button {
+  pointer-events: auto;
+
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+
+  background: var(--black);
+  border: none;
+
+  background-color: var(--yellow);
+  color: var(--black);
+  border-radius: 4px;
+
+  /* TODO: Figure out if this is correct and if so how to implement it */
+  .pink {
+    background-color: var(--pink);
+  }
 }

@@ -1,14 +1,9 @@
 import React from "react";
 import styles from "../styles/GamePreviewCard.module.css";
+import { Game } from "./GameCarousel";
+import { Link } from "react-router-dom";
 
-interface GameCardPreviewProps {
-  title: string;
-  description: string;
-  link: string;
-  image?: string;
-}
-
-export const GamePreviewCard: React.FC<GameCardPreviewProps> = ({
+const GamePreviewCard: React.FC<Game> = ({
   title,
   description,
   link,
@@ -20,10 +15,12 @@ export const GamePreviewCard: React.FC<GameCardPreviewProps> = ({
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
-        <a href={link} className={styles.button}>
-          View Game
-        </a>
+        <Link to={link} className={styles.button}>
+          <button> View Game</button>
+        </Link>
       </div>
     </div>
   );
 };
+
+export default GamePreviewCard;
