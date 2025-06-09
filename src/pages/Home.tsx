@@ -1,5 +1,6 @@
 import React from "react";
 import GameCarousel from "../components/GameCarousel";
+import CraneOverlay from "../components/pages/home/CraneOverlay";
 import styles from "../styles/Home.module.css";
 import aeLogo from "../assets/ae-logo.png";
 import mmLogo from "../assets/mm-logo.png";
@@ -33,6 +34,7 @@ const Home: React.FC = () => {
   return (
     <div className={styles.homeContainer}>
       <GameCarousel games={games} />
+      <CraneOverlay />
     </div>
   );
 };
