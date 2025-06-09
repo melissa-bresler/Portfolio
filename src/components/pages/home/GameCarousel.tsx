@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "../styles/GameCarousel.module.css";
-import GamePreviewCard from "./GamePreviewCard";
+import React, { useEffect, useRef } from "react";
+import styles from "../../../styles/GameCarousel.module.css";
+import GamePreviewCard from ".//GamePreviewCard";
 
 export interface Game {
   title: string;

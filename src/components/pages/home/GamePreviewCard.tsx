@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../styles/GamePreviewCard.module.css";
+import styles from "../../../styles/GamePreviewCard.module.css";
 import { Game } from "./GameCarousel";
-import { Link } from "react-router-dom";
+import CustomButton from "../../CustomButton";
 
 const GamePreviewCard: React.FC<Game> = ({
   title,
@@ -20,9 +20,11 @@ const GamePreviewCard: React.FC<Game> = ({
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
-        <Link to={link} className={styles.button}>
-          <button> View Game</button>
-        </Link>
+        <CustomButton to={link}>View Game</CustomButton>
+
+        {/* <button onClick={(e) => e.stopPropagation()} data-role="card-button">
+          <a href={link}>View Game</a>
+        </button> */}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "@mui/material";
-import GameBreakdown from "../../components/GameBreakdown";
+import GameBreakdown from "../../components/pages/games/GameBreakdown";
 import swiflogo from "../../assets/swift-logo.png";
 import xcodelogo from "../../assets/xcode-logo.png";
 import { BackToHomeButton } from "../../components/BackToHomeButton";

@@ -7,6 +7,7 @@ body {
 :root {
   --pink: #ff008c;
   --yellow: #ffca3a;
+  --darkeryellow: #d1a630;
   --black: #000;
   --lighterblack: #1e1e1e;
   --darkgrey: #a9a9a9;
@@ -15,22 +16,29 @@ body {
   --white: #fff;
 }
 
-button {
+button,
+button.custom-button,
+a.custom-button {
   pointer-events: auto;
-
   padding: 0.5rem 2rem;
   font-size: 1rem;
   cursor: pointer;
-
   background: var(--black);
   border: none;
-
   background-color: var(--yellow);
   color: var(--black);
   border-radius: 4px;
+  text-transform: none;
+  transition: background-color 0.2s ease;
 
   /* TODO: Figure out if this is correct and if so how to implement it */
-  .pink {
+  /* .pink {
     background-color: var(--pink);
   }
+} */
+}
+
+button.custom-button:hover,
+a.custom-button:hover {
+  background-color: var(--darkeryellow); /*TODO: Adjust later*/
 }

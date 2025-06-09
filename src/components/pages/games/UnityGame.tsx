@@ -1,9 +1,7 @@
-// UnityGame.tsx
 import React from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 const UnityGame: React.FC = () => {
-  // Replace with the path to your WebGL JSON build
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl: "unityBuild/Build/TestMiniGame.loader.js",
     dataUrl: "unityBuild/Build/TestMiniGame.data",

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "@mui/material";
-import GameBreakdown from "../../components/GameBreakdown";
+import GameBreakdown from "../../components/pages/games/GameBreakdown";
 import csharplogo from "../../assets/c-sharp-logo.png";
 import unitylogo from "../../assets/unity-logo.png";
 import { BackToHomeButton } from "../../components/BackToHomeButton";

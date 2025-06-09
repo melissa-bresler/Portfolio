@@ -17,7 +17,6 @@ const Home: React.FC = () => {
     {
       title: "Memory Meltdown",
       description:
-        "Co-developed by James Watson, Joao Tiago Da Silva Figueira, and myself, Memory Master is a mobile game that tests your memorization skills through three fun mini-games.",
       link: "/memory-meltdown",
       image: mmLogo,
     },

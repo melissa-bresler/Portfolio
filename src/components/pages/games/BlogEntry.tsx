@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import moment from "moment";
-import { Card } from "./Card";
+import { Card } from "../../Card";
 
 const BlogEntry: React.FC<{
   date: string | Date;
@@ -43,6 +43,7 @@ const BlogEntry: React.FC<{
               style={{
                 border: "1px solid var(--lightgrey)",
                 borderRadius: "8px",
+                //TODO: tested this with pink instead of grey and it's not terrible
                 boxShadow: "0 2px 5px var(--lightestgrey)",
                 padding: "5px",
                 backgroundColor: "var(--white)",
