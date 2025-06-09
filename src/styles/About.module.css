@@ -1,0 +1,15 @@
+.image {
+  max-width: 10rem;
+  max-height: 10rem;
+  object-fit: contain;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+}
+
+.static {
+  max-width: 25%;
+  object-fit: contain;
+  margin: auto;
+  position: absolute;
+}
