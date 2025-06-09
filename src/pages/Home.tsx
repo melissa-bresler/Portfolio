@@ -1,5 +1,5 @@
 import React from "react";
-import GameCarousel from "../components/GameCarousel";
+import GameCarousel from "../components/pages/home/GameCarousel";
 import CraneOverlay from "../components/pages/home/CraneOverlay";
 import styles from "../styles/Home.module.css";
 import aeLogo from "../assets/ae-logo.png";
