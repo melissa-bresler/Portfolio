@@ -6,9 +6,18 @@ import styles from "../styles/About.module.css";
 import PacmanEasterEgg from "../components/PackMan";
 
 const About: React.FC = () => {
+  const toggleDarkMode = () => {
+    const isDark = document.body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
   return (
     <div>
-      <img src={machine} alt="arcade machine" className={styles.static} />
+      <img
+        src={machine}
+        alt="arcade machine"
+        className={`${styles.static} invert-on-dark`}
+      />
       <Container sx={{ marginTop: 4 }}>
         <Box sx={{ maxWidth: "60%", margin: "0 auto", padding: 2 }}>
           <img src={photo} alt="portrait" className={styles.image} />
@@ -51,7 +60,7 @@ const About: React.FC = () => {
           zIndex: 9999, // Ensure it’s on top
         }}
       >
-        <PacmanEasterEgg onPacmanClick={undefined} />
+        <PacmanEasterEgg onPacmanClick={toggleDarkMode} />
       </div>
     </div>
   );

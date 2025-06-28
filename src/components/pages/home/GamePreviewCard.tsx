@@ -14,7 +14,11 @@ const GamePreviewCard: React.FC<Game> = ({
       {/* <div className={`${styles.card} ${enlarged ? styles.enlarged : ""}`}> */}
       {image && (
         <div className={styles.imageWrapper}>
-          <img src={image} alt={title} className={styles.image} />
+          <img
+            src={image}
+            alt={title}
+            className={`${styles.image} invert-on-dark`}
+          />
         </div>
       )}
       <div className={styles.content}>

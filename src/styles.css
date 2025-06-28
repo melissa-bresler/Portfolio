@@ -4,6 +4,15 @@ body {
   background-color: var(--lightestgrey);
 }
 
+body.dark-mode {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+body.dark-mode img.invert-on-dark {
+  filter: invert(1);
+}
+
 :root {
   --pink: #ff008c;
   --yellow: #ffca3a;

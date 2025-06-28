@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -9,6 +9,13 @@ import MemoryMeltdown from "./pages/games/MemoryMeltdown";
 import KaaxsDawn from "./pages/games/KaaxsDawn";
 
 const App: React.FC = () => {
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+  }, []);
+
   return (
     <Router>
       <Navbar />

@@ -145,6 +145,7 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
               key={pellet.id}
               src={pelletimg}
               alt="Pellet"
+              className="invert-on-dark"
               style={{
                 position: "absolute",
                 width: 12,
@@ -174,7 +175,6 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
         ref={pacmanRef}
         className={styles.pacman}
         onClick={() => {
-          console.log("Pacman clicked!");
           if (onPacmanClick) onPacmanClick();
         }}
         role="button"
