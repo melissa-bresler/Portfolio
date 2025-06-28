@@ -2,13 +2,13 @@ import React from "react";
 import { Container, Typography } from "@mui/material";
 import BlogEntry from "../../components/pages/games/BlogEntry";
 import GameBreakdown from "../../components/pages/games/GameBreakdown";
-import conceptArt from "../../assets/adventureExe-concept-art.jpg";
-import csharplogo from "../../assets/c-sharp-logo.png";
-import unitylogo from "../../assets/unity-logo.png";
-import aiArt from "../../assets/ai-generated-art.png";
-import proofOfConcept from "../../assets/proof-of-concept.png";
-import initialFunctionality from "../../assets/initial-functionality.png";
-import chapterStats from "../../assets/chapter-stats-introduced.png";
+import conceptArt from "../../assets/pages/games/AdventureExe/adventureExe-concept-art.jpg";
+import csharplogo from "../../assets/pages/games/c-sharp-logo.png";
+import unitylogo from "../../assets/pages/games/unity-logo.png";
+import aiArt from "../../assets/pages/games/AdventureExe/ai-generated-art.png";
+import proofOfConcept from "../../assets/pages/games/AdventureExe/proof-of-concept.png";
+import initialFunctionality from "../../assets/pages/games/AdventureExe/initial-functionality.png";
+import chapterStats from "../../assets/pages/games/AdventureExe/chapter-stats-introduced.png";
 import { BackToHomeButton } from "../../components/BackToHomeButton";
 
 const AdventureExe: React.FC = () => {
@@ -90,8 +90,8 @@ const AdventureExe: React.FC = () => {
           platforms={["Web Based Application"]}
           status="In Development"
           logos={[
-            { name: csharplogo, alt: "C# Logo" },
-            { name: unitylogo, alt: "Unity Logo" },
+            { name: csharplogo, alt: "C# Logo", invert: false },
+            { name: unitylogo, alt: "Unity Logo", invert: true },
           ]}
           playGame={true}
           gameArt={{

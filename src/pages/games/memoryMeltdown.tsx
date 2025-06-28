@@ -1,10 +1,9 @@
 import React from "react";
 import { Container } from "@mui/material";
 import GameBreakdown from "../../components/pages/games/GameBreakdown";
-import swiflogo from "../../assets/swift-logo.png";
-import xcodelogo from "../../assets/xcode-logo.png";
+import swiflogo from "../../assets/pages/games/swift-logo.png";
 import { BackToHomeButton } from "../../components/BackToHomeButton";
-import gameScreenshots from "../../assets/memory-meltdown.png";
+import gameScreenshots from "../../assets/pages/games/MemoryMeltdown/memory-meltdown.png";
 
 const MemoryMeltdown: React.FC = () => {
   const gameDescription =
@@ -19,10 +18,7 @@ const MemoryMeltdown: React.FC = () => {
           date="2023-05-15"
           platforms={["Mobile Application - IOS"]}
           status="Complete"
-          logos={[
-            { name: swiflogo, alt: "Swift Logo" },
-            { name: xcodelogo, alt: "X-Code Logo" },
-          ]}
+          logos={[{ name: swiflogo, alt: "Swift Logo", invert: false }]}
           playGame={false}
           gameArt={{
             src: gameScreenshots,

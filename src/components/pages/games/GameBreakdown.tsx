@@ -9,7 +9,7 @@ const GameBreakdown: React.FC<{
   title: string;
   platforms: string[];
   status: string;
-  logos: { name: string; alt: string }[];
+  logos: { name: string; alt: string; invert: boolean }[];
   playGame: boolean;
   gameArt: { src: string; alt: string };
 }> = ({
@@ -81,6 +81,7 @@ const GameBreakdown: React.FC<{
                       <img
                         src={logo.name}
                         alt={logo.alt}
+                        className={logo.invert ? "invert-on-dark" : ""}
                         style={{ width: "50px", height: "auto", margin: 5 }}
                       />
                     </div>

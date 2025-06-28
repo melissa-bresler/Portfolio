@@ -1,10 +1,10 @@
 import React from "react";
 import { Container } from "@mui/material";
 import GameBreakdown from "../../components/pages/games/GameBreakdown";
-import csharplogo from "../../assets/c-sharp-logo.png";
-import unitylogo from "../../assets/unity-logo.png";
+import csharplogo from "../../assets/pages/games/c-sharp-logo.png";
+import unitylogo from "../../assets/pages/games/unity-logo.png";
 import { BackToHomeButton } from "../../components/BackToHomeButton";
-import keyElements from "../../assets/kd-key-elements.png";
+import keyElements from "../../assets/pages/games/KaaxsDawn/kd-key-elements.png";
 
 const KaaxsDawn: React.FC = () => {
   const gameDescription =
@@ -20,8 +20,8 @@ const KaaxsDawn: React.FC = () => {
           platforms={["PC"]}
           status="Complete"
           logos={[
-            { name: csharplogo, alt: "C# Logo" },
-            { name: unitylogo, alt: "Unity Logo" },
+            { name: csharplogo, alt: "C# Logo", invert: false },
+            { name: unitylogo, alt: "Unity Logo", invert: true },
           ]}
           playGame={false}
           gameArt={{

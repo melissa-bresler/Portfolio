@@ -1,6 +1,6 @@
 import styles from "../styles/Pacman.module.css";
 import React, { useRef, useEffect, useState } from "react";
-import pelletimg from "../assets/pellet.png";
+import pelletimg from "../assets/pages/about/pellet.png";
 
 interface Props {
   onPacmanClick?: () => void;

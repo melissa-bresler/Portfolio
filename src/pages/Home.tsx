@@ -2,9 +2,9 @@ import React from "react";
 import GameCarousel from "../components/pages/home/GameCarousel";
 import CraneOverlay from "../components/pages/home/CraneOverlay";
 import styles from "../styles/Home.module.css";
-import aeLogo from "../assets/ae-logo.png";
-import mmLogo from "../assets/mm-logo.png";
-import kdLogo from "../assets/kd-logo.png";
+import aeLogo from "../assets/pages/home/ae-logo.png";
+import mmLogo from "../assets/pages/home/mm-logo.png";
+import kdLogo from "../assets/pages/home/kd-logo.png";
 
 const Home: React.FC = () => {
   const games = [

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Typography, Box } from "@mui/material";
-import photo from "../assets/about-me-photo.jpg";
-import machine from "../assets/arcade-machine.png";
+import photo from "../assets/pages/about/about-me-photo.jpg";
+import machine from "../assets/pages/about/arcade-machine.png";
 import styles from "../styles/About.module.css";
 import PacmanEasterEgg from "../components/PackMan";
 
