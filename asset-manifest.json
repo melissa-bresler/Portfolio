@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c9e725eb.css",
-    "main.js": "/static/js/main.662e8362.js",
+    "main.css": "/static/css/main.a49d9e80.css",
+    "main.js": "/static/js/main.5381b540.js",
     "static/media/ai-generated-art.png": "/static/media/ai-generated-art.4bcf5dc09b1d9a88a4a6.png",
     "static/media/kd-key-elements.png": "/static/media/kd-key-elements.6d0477beba8dbc8bc04a.png",
     "static/media/about-me-photo.jpg": "/static/media/about-me-photo.1cf12859673ff1be5bac.jpg",
@@ -15,15 +15,18 @@
     "static/media/ae-logo.png": "/static/media/ae-logo.bf2a3a1fa45480070cbb.png",
     "static/media/arcade-machine.png": "/static/media/arcade-machine.3d5c23f7deb970b39e19.png",
     "static/media/adventureExe-concept-art.jpg": "/static/media/adventureExe-concept-art.1a8898c680ed06443543.jpg",
-    "static/media/xcode-logo.png": "/static/media/xcode-logo.dad6f8116afef0ee9841.png",
     "static/media/swift-logo.png": "/static/media/swift-logo.d0cf8dd3a99e6de3edc6.png",
+    "static/media/navbar-controller.png": "/static/media/navbar-controller.7b9225cfc2d44b859b1a.png",
+    "static/media/green-ghost.png": "/static/media/green-ghost.5303e3bd36ca4b3faa0a.png",
+    "static/media/red-ghost.png": "/static/media/red-ghost.4e2a0bce465e1d536fa2.png",
     "static/media/c-sharp-logo.png": "/static/media/c-sharp-logo.264ea095991439631bcf.png",
+    "static/media/ghost.png": "/static/media/ghost.9fe704cf1557a343e524.png",
     "index.html": "/index.html",
-    "main.c9e725eb.css.map": "/static/css/main.c9e725eb.css.map",
-    "main.662e8362.js.map": "/static/js/main.662e8362.js.map"
+    "main.a49d9e80.css.map": "/static/css/main.a49d9e80.css.map",
+    "main.5381b540.js.map": "/static/js/main.5381b540.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9e725eb.css",
-    "static/js/main.662e8362.js"
+    "static/css/main.a49d9e80.css",
+    "static/js/main.5381b540.js"
   ]
 }
