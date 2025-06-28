@@ -1,13 +1,44 @@
 import styles from "../styles/Pacman.module.css";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import pelletimg from "../assets/pellet.png";
 
 interface Props {
   onPacmanClick?: () => void;
+}
+interface Pellet {
+  id: number;
+  lengthOnPath: number;
+  position: { x: number; y: number };
+  eaten: boolean;
 }
 
 const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
   const pacmanRef = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
+
+  const pelletCount = 20;
+  const [pellets, setPellets] = useState<Pellet[]>([]);
+
+  useEffect(() => {
+    if (!pathRef.current) return;
+
+    const path = pathRef.current;
+    const totalLength = path.getTotalLength();
+
+    const pelletPositions: Pellet[] = [];
+    for (let i = 0; i < pelletCount / 2; i++) {
+      const lengthOnPath = (totalLength / pelletCount) * i;
+      const point = path.getPointAtLength(lengthOnPath);
+      pelletPositions.push({
+        id: i,
+        lengthOnPath,
+        position: { x: point.x, y: point.y },
+        eaten: false,
+      });
+    }
+
+    setPellets(pelletPositions);
+  }, [pelletCount]);
 
   useEffect(() => {
     if (!pathRef.current || !pacmanRef.current) return;
@@ -33,8 +64,13 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
 
       progress += speed * delta;
 
+      //Reset pacman position and pellets
       if (progress > totalLength) {
-        progress = 0; // Reset to start of path
+        progress = 0;
+
+        setPellets((oldPellets) =>
+          oldPellets.map((p) => ({ ...p, eaten: false }))
+        );
       }
 
       const point = path.getPointAtLength(progress);
@@ -61,6 +97,24 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
         pacman.style.backgroundPosition = `-${frame * 48}px 0`;
       }
 
+      setPellets((oldPellets) =>
+        oldPellets.map((pellet) => {
+          if (pellet.eaten) return pellet;
+
+          svgPoint.x = pellet.position.x;
+          svgPoint.y = pellet.position.y;
+          const pelletScreenPoint = svgPoint.matrixTransform(screenCTM);
+
+          const dx = screenPoint.x - pelletScreenPoint.x;
+          const dy = screenPoint.y - pelletScreenPoint.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 20) {
+            return { ...pellet, eaten: true };
+          }
+          return pellet;
+        })
+      );
       requestAnimationFrame(animate);
     };
 
@@ -83,6 +137,38 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
           strokeWidth="2"
         />
       </svg>
+
+      {pellets.map(
+        (pellet) =>
+          !pellet.eaten && (
+            <img
+              key={pellet.id}
+              src={pelletimg}
+              alt="Pellet"
+              style={{
+                position: "absolute",
+                width: 12,
+                height: 12,
+                pointerEvents: "none",
+                transform: (() => {
+                  if (!pathRef.current) return "";
+                  const svgPoint =
+                    pathRef.current.ownerSVGElement?.createSVGPoint();
+                  if (!svgPoint) return "";
+                  svgPoint.x = pellet.position.x;
+                  svgPoint.y = pellet.position.y;
+                  const screenCTM = pathRef.current.getScreenCTM();
+                  if (!screenCTM) return "";
+                  const screenPoint = svgPoint.matrixTransform(screenCTM);
+                  return `translate(${screenPoint.x - 6}px, ${
+                    screenPoint.y - 6
+                  }px)`; // center the image
+                })(),
+                transition: "opacity 0.3s ease",
+              }}
+            />
+          )
+      )}
 
       <div
         ref={pacmanRef}
