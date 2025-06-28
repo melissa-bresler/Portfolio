@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.a49d9e80.css",
+    "main.css": "/static/css/main.7e81b95a.css",
     "main.js": "/static/js/main.5381b540.js",
     "static/media/ai-generated-art.png": "/static/media/ai-generated-art.4bcf5dc09b1d9a88a4a6.png",
     "static/media/kd-key-elements.png": "/static/media/kd-key-elements.6d0477beba8dbc8bc04a.png",
@@ -22,11 +22,11 @@
     "static/media/c-sharp-logo.png": "/static/media/c-sharp-logo.264ea095991439631bcf.png",
     "static/media/ghost.png": "/static/media/ghost.9fe704cf1557a343e524.png",
     "index.html": "/index.html",
-    "main.a49d9e80.css.map": "/static/css/main.a49d9e80.css.map",
+    "main.7e81b95a.css.map": "/static/css/main.7e81b95a.css.map",
     "main.5381b540.js.map": "/static/js/main.5381b540.js.map"
   },
   "entrypoints": [
-    "static/css/main.a49d9e80.css",
+    "static/css/main.7e81b95a.css",
     "static/js/main.5381b540.js"
   ]
 }
