@@ -180,7 +180,7 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
         role="button"
         aria-label="Hidden Pac-Man"
         style={{
-          backgroundImage: `url("/assets/pacman-sprite-2.png")`,
+          backgroundImage: `url("/assets/pacman-sprite.png")`,
         }}
       />
     </div>
