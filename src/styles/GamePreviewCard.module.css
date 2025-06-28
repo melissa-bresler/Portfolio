@@ -1,6 +1,9 @@
 .card {
   flex: 0 0 auto;
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   margin-right: 1rem;
   border-radius: 8px;
   overflow: hidden;
@@ -43,6 +46,9 @@
 
 .content {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .title {
@@ -53,6 +59,8 @@
 .description {
   font-size: 1rem;
   color: var(--lightgrey);
+  flex-grow: 1;
+  margin-bottom: 1rem;
 }
 
 :global(body.dark-mode) .description {
@@ -60,9 +68,5 @@
 }
 
 .button {
-  /* TODO: See if these can be lined up nicely */
-  margin-top: 1rem;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
+  margin-top: auto;
 }

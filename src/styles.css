@@ -49,5 +49,5 @@ a.custom-button {
 
 button.custom-button:hover,
 a.custom-button:hover {
-  background-color: var(--darkeryellow); /*TODO: Adjust later*/
+  background-color: var(--darkeryellow);
 }

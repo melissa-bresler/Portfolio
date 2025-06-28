@@ -24,11 +24,9 @@ const GamePreviewCard: React.FC<Game> = ({
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
-        <CustomButton to={link}>View Game</CustomButton>
-
-        {/* <button onClick={(e) => e.stopPropagation()} data-role="card-button">
-          <a href={link}>View Game</a>
-        </button> */}
+        <div className={styles.button}>
+          <CustomButton to={link}>View Game</CustomButton>
+        </div>
       </div>
     </div>
   );
