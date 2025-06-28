@@ -3,6 +3,7 @@ import { Container, Typography, Box } from "@mui/material";
 import photo from "../assets/about-me-photo.jpg";
 import machine from "../assets/arcade-machine.png";
 import styles from "../styles/About.module.css";
+import PacmanEasterEgg from "../components/PackMan";
 
 const About: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const About: React.FC = () => {
       <img src={machine} alt="arcade machine" className={styles.static} />
       <Container sx={{ marginTop: 4 }}>
         <Box sx={{ maxWidth: "60%", margin: "0 auto", padding: 2 }}>
-          <img src={photo} alt="photo" className={styles.image} />
+          <img src={photo} alt="portrait" className={styles.image} />
           <Typography
             variant="body1"
             component="div"
@@ -37,6 +38,21 @@ const About: React.FC = () => {
           </Typography>
         </Box>
       </Container>
+      {/* Used https://picsvg.com to get svg file from img */}
+      {/* Used https://yqnn.github.io/svg-path-editor/ for the svg path edit */}
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          pointerEvents: "none", // So clicks pass through unless you want to catch clicks inside Pacman
+          zIndex: 9999, // Ensure it’s on top
+        }}
+      >
+        <PacmanEasterEgg onPacmanClick={undefined} />
+      </div>
     </div>
   );
 };
