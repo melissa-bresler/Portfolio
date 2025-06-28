@@ -13,3 +13,12 @@
   margin: auto;
   position: absolute;
 }
+
+.ghost {
+  position: fixed;
+  transform: scale(0.5);
+}
+
+.flipped {
+  transform: scale(0.5) scaleX(-1);
+}

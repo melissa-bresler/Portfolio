@@ -4,6 +4,7 @@ import pelletimg from "../assets/pages/about/pellet.png";
 
 interface Props {
   onPacmanClick?: () => void;
+  darkMode: boolean;
 }
 interface Pellet {
   id: number;
@@ -12,13 +13,14 @@ interface Pellet {
   eaten: boolean;
 }
 
-const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
+const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick, darkMode }) => {
   const pacmanRef = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
 
   const pelletCount = 20;
   const [pellets, setPellets] = useState<Pellet[]>([]);
 
+  // Set pellets
   useEffect(() => {
     if (!pathRef.current) return;
 
@@ -40,6 +42,7 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
     setPellets(pelletPositions);
   }, [pelletCount]);
 
+  // Pacman movement
   useEffect(() => {
     if (!pathRef.current || !pacmanRef.current) return;
 
@@ -75,6 +78,12 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
 
       const point = path.getPointAtLength(progress);
 
+      // Calculate angle for pacman to face
+      const nextPoint = path.getPointAtLength(progress + 1);
+      const dx = nextPoint.x - point.x;
+      const dy = nextPoint.y - point.y;
+      const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
       const svgPoint = path.ownerSVGElement?.createSVGPoint();
       if (!svgPoint) return;
 
@@ -88,7 +97,7 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
 
       pacman.style.transform = `translate(${screenPoint.x - 24}px, ${
         screenPoint.y - 24
-      }px)`;
+      }px)  rotate(${angle}deg)`;
 
       frameElapsed += delta * 1000;
       if (frameElapsed >= frameInterval) {
@@ -120,6 +129,10 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
 
     requestAnimationFrame(animate);
   }, []);
+
+  const spriteUrl = darkMode
+    ? "/assets/pacman-coloured-sprite.png"
+    : "/assets/pacman-sprite.png";
 
   return (
     <div className={styles.wrapper}>
@@ -180,7 +193,7 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick }) => {
         role="button"
         aria-label="Hidden Pac-Man"
         style={{
-          backgroundImage: `url("/assets/pacman-sprite.png")`,
+          backgroundImage: `url("${spriteUrl}")`,
         }}
       />
     </div>

@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Typography, Box } from "@mui/material";
 import photo from "../assets/pages/about/about-me-photo.jpg";
 import machine from "../assets/pages/about/arcade-machine.png";
+import ghost from "../assets/pages/about/ghost.png";
+import redGhost from "../assets/pages/about/red-ghost.png";
+import greenGhost from "../assets/pages/about/green-ghost.png";
 import styles from "../styles/About.module.css";
 import PacmanEasterEgg from "../components/PackMan";
+import clsx from "clsx";
 
 const About: React.FC = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Check initial theme on mount
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    const isDark =
+      storedTheme === "dark" || document.body.classList.contains("dark-mode");
+
+    setDarkMode(isDark);
+
+    if (isDark) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, []);
+
   const toggleDarkMode = () => {
     const isDark = document.body.classList.toggle("dark-mode");
     localStorage.setItem("theme", isDark ? "dark" : "light");
+    setDarkMode(isDark);
   };
 
   return (
@@ -17,6 +39,25 @@ const About: React.FC = () => {
         src={machine}
         alt="arcade machine"
         className={`${styles.static} invert-on-dark`}
+      />
+      <img
+        src={darkMode ? redGhost : ghost}
+        alt="red ghost"
+        className={clsx(styles.ghost, !darkMode && styles.flipped)}
+        style={{
+          top: "70vh",
+          left: "40vw",
+        }}
+      />
+
+      <img
+        src={darkMode ? greenGhost : ghost}
+        alt="green ghost"
+        className={styles.ghost}
+        style={{
+          top: "15vh",
+          left: "85vw",
+        }}
       />
       <Container sx={{ marginTop: 4 }}>
         <Box sx={{ maxWidth: "60%", margin: "0 auto", padding: 2 }}>
@@ -60,7 +101,7 @@ const About: React.FC = () => {
           zIndex: 9999, // Ensure it’s on top
         }}
       >
-        <PacmanEasterEgg onPacmanClick={toggleDarkMode} />
+        <PacmanEasterEgg onPacmanClick={toggleDarkMode} darkMode={darkMode} />
       </div>
     </div>
   );
