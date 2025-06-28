@@ -9,84 +9,87 @@ import {
   MenuItem,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-// TODO: Should appear/disappear on hover
-// FIXME: Navbar doesn't disappear once an option has been clicked
+import styles from "../styles/Navbar.module.css";
+import controller from "../assets/navbar-controller.png";
+import { useDarkMode } from "../hooks/UseDarkMode";
+
 const Navbar: React.FC = () => {
-  // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
-  // const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
-
-  // const handleMenuClose = () => {
-  //   setAnchorEl(null);
-  // };
-
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+
   const handleClose = () => {
-    setAnchorEl(null);
+    closeTimeout = setTimeout(() => {
+      setAnchorEl(null);
+    }, 75);
   };
+
+  const isDarkMode = useDarkMode();
+  const textColour = isDarkMode ? "var(--black)" : "var(--white)";
+
+  let closeTimeout: ReturnType<typeof setTimeout>;
 
   return (
     <AppBar position="static">
-      <Toolbar sx={{ background: "black" }}>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          MELISSA BRESLER
-        </Typography>
+      <Toolbar
+        sx={{ background: isDarkMode ? "var(--white)" : "var(--black)" }}
+      >
+        <Box sx={{ display: "flex", flexGrow: 1, alignItems: "center" }}>
+          <Typography
+            variant="h6"
+            sx={{ marginRight: "10px", color: textColour }}
+          >
+            MELISSA BRESLER
+          </Typography>
+          <img src={controller} alt="Pellet" className={styles.image} />
+        </Box>
         <Box sx={{ display: "flex", gap: 2 }}>
-          {/* <div>
+          <Button sx={{ color: textColour }} component={Link} to="/">
+            Home
+          </Button>
+          <div
+            onMouseEnter={(e) => setAnchorEl(e.currentTarget)}
+            onMouseLeave={handleClose}
+          >
             <Button
-              color="inherit"
-              component={Link} // Link to the home page
-              to="/"
-              onMouseOver={handleMenuOpen} // Open dropdown on hover
-              onMouseLeave={handleMenuClose} // Close dropdown on mouse leave
-            >
-              Home
-            </Button>
-            <Menu
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-              onMouseLeave={handleMenuClose} // Close dropdown on mouse leave
-            >
-              <MenuItem component={Link} to="/">
-                Main Home
-              </MenuItem>
-            </Menu>
-          </div> */}
-          <div>
-            <Button
-              color="inherit"
+              sx={{ color: textColour }}
               aria-controls={open ? "basic-menu" : undefined}
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
-              onClick={handleClick}
             >
-              Home
+              Games
             </Button>
             <Menu
               id="basic-menu"
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
+              autoFocus={false}
+              disableAutoFocusItem={true}
+              MenuListProps={{
+                onMouseEnter: () => clearTimeout(closeTimeout),
+                onMouseLeave: handleClose,
+              }}
             >
-              <MenuItem component={Link} to="/adventureExe">
+              <MenuItem
+                component={Link}
+                to="/adventureExe"
+                onClick={handleClose}
+              >
                 Adventure.exe
               </MenuItem>
-              <MenuItem component={Link} to="/memory-meltdown">
+              <MenuItem
+                component={Link}
+                to="/memory-meltdown"
+                onClick={handleClose}
+              >
                 Memory Meltdown
               </MenuItem>
-              <MenuItem component={Link} to="/kaaxs-dawn">
+              <MenuItem component={Link} to="/kaaxs-dawn" onClick={handleClose}>
                 Kaax's Dawn
               </MenuItem>
             </Menu>
           </div>
-          <Button color="inherit" component={Link} to="/about">
+          <Button sx={{ color: textColour }} component={Link} to="/about">
             About
           </Button>
           {/* TODO: Uncomment after making page functional */}

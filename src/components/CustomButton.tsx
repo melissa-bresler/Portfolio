@@ -7,14 +7,16 @@ import "../styles.css";
 interface CustomButtonProps {
   to?: string;
   children: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({ to, children }) => {
+const CustomButton: React.FC<CustomButtonProps> = ({ to, children, style }) => {
   const isLink = Boolean(to);
 
   return (
     <Button
       className="custom-button"
+      style={style}
       component={isLink ? RouterLink : "button"}
       to={to}
       variant="text"
