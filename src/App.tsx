@@ -7,6 +7,7 @@ import About from "./pages/About";
 import AdventureExe from "./pages/games/AdventureExe";
 import MemoryMeltdown from "./pages/games/MemoryMeltdown";
 import KaaxsDawn from "./pages/games/KaaxsDawn";
+import Biosynth from "./pages/games/Biosynth";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const App: React.FC = () => {
         <Route path="/adventureExe" element={<AdventureExe />} />{" "}
         <Route path="/memory-meltdown" element={<MemoryMeltdown />} />{" "}
         <Route path="/kaaxs-dawn" element={<KaaxsDawn />} />{" "}
+        <Route path="/biosynth" element={<Biosynth />} />{" "}
       </Routes>
     </Router>
   );

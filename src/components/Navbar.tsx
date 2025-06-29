@@ -87,6 +87,9 @@ const Navbar: React.FC = () => {
               <MenuItem component={Link} to="/kaaxs-dawn" onClick={handleClose}>
                 Kaax's Dawn
               </MenuItem>
+              <MenuItem component={Link} to="/biosynth" onClick={handleClose}>
+                Biosynth
+              </MenuItem>
             </Menu>
           </div>
           <Button sx={{ color: textColour }} component={Link} to="/about">

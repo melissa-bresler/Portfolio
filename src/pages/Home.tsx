@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import aeLogo from "../assets/pages/home/ae-logo.png";
 import mmLogo from "../assets/pages/home/mm-logo.png";
 import kdLogo from "../assets/pages/home/kd-logo.png";
+import bLogo from "../assets/pages/home/b-logo.png";
 
 const Home: React.FC = () => {
   const games = [
@@ -28,6 +29,13 @@ const Home: React.FC = () => {
         "Explore a vibrant 3D world in this adventure game prototype, blending light combat, exploration, and charm—fun for all ages and inspired by games like Stray and Breath of the Wild.",
       link: "/kaaxs-dawn",
       image: kdLogo,
+    },
+    {
+      title: "Biosynth",
+      description:
+        "A 2.5D isometric game set in a futuristic, barter-based society where you play as a kitchen worker navigating daily tasks, open exploration, and a growing effort to save a threatened world.",
+      link: "/biosynth",
+      image: bLogo,
     },
   ];
 
