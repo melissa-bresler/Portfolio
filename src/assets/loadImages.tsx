@@ -17,7 +17,7 @@ export const loadImagesFromFolder = (folderName: string): string[] => {
       /\.(png|jpe?g|svg)$/
     ),
     kd: require.context(
-      "./pages/games/KaaxsDawn",
+      "./pages/games/KaaxsDawn/Slideshow",
       false,
       /\.(png|jpe?g|svg)$/
     ),
