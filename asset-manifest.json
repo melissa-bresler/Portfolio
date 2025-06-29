@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.15c3afa6.css",
-    "main.js": "/static/js/main.1ecc4396.js",
+    "main.js": "/static/js/main.c16f3e37.js",
     "static/media/pause-menu.png": "/static/media/pause-menu.6ff242b1cff8c91d6ddf.png",
     "static/media/inventory.png": "/static/media/inventory.608647550322b09ab14c.png",
     "static/media/ai-generated-art.png": "/static/media/ai-generated-art.a299117aeee73085590c.png",
@@ -10,6 +10,7 @@
     "static/media/combat.png": "/static/media/combat.f1dbaf030a961a67151b.png",
     "static/media/puzzle.png": "/static/media/puzzle.6453ffd79b5489a078cf.png",
     "static/media/main-menu.png": "/static/media/main-menu.9e927e71396de28c4fc5.png",
+    "static/media/milanote.png": "/static/media/milanote.baaff1dbe2c8390dc26e.png",
     "static/media/save-slots.png": "/static/media/save-slots.cd5c1ea92a0120f4d6b6.png",
     "static/media/unity-save-system.png": "/static/media/unity-save-system.fc92fbf3c12d6949368b.png",
     "static/media/about-me-photo.jpg": "/static/media/about-me-photo.1cf12859673ff1be5bac.jpg",
@@ -28,6 +29,7 @@
     "static/media/kd-logo.png": "/static/media/kd-logo.dbc0a3dbaf0dd88ded4d.png",
     "static/media/high-scores.png": "/static/media/high-scores.c91c6a97d3e6f18f0a11.png",
     "static/media/proof-of-concept.png": "/static/media/proof-of-concept.5dd3a2d2212bf2b6cb97.png",
+    "static/media/b-logo.png": "/static/media/b-logo.79eaf457b17cf0893872.png",
     "static/media/mm-logo.png": "/static/media/mm-logo.25d87bc70aa8c3131498.png",
     "static/media/ae-logo.png": "/static/media/ae-logo.bf2a3a1fa45480070cbb.png",
     "static/media/arcade-machine.png": "/static/media/arcade-machine.3d5c23f7deb970b39e19.png",
@@ -40,10 +42,10 @@
     "static/media/ghost.png": "/static/media/ghost.9fe704cf1557a343e524.png",
     "index.html": "/index.html",
     "main.15c3afa6.css.map": "/static/css/main.15c3afa6.css.map",
-    "main.1ecc4396.js.map": "/static/js/main.1ecc4396.js.map"
+    "main.c16f3e37.js.map": "/static/js/main.c16f3e37.js.map"
   },
   "entrypoints": [
     "static/css/main.15c3afa6.css",
-    "static/js/main.1ecc4396.js"
+    "static/js/main.c16f3e37.js"
   ]
 }
