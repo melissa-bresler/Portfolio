@@ -3,6 +3,8 @@ import moment from "moment";
 import { Card } from "../../Card";
 import styles from "../../../styles/GameBreakdown.module.css";
 import clsx from "clsx";
+import ImageSwiper from "./ImageSwiper";
+import { useDarkMode } from "../../../hooks/UseDarkMode";
 
 const GameBreakdown: React.FC<{
   date: string | Date;
@@ -13,6 +15,7 @@ const GameBreakdown: React.FC<{
   logos: { name: string; alt: string; invert: boolean }[];
   GameComponent?: React.FC;
   gameArt: { src: string; alt: string };
+  images?: string[];
 }> = ({
   date,
   description,
@@ -22,13 +25,15 @@ const GameBreakdown: React.FC<{
   logos,
   gameArt,
   GameComponent,
+  images,
 }) => {
   const displayDate = moment(date).format("DD-MM-YYYY");
+  const isDarkMode = useDarkMode();
 
   return (
     <>
-      <Grid xs={6} display={"flex"}>
-        <Grid item width={"50%"}>
+      <Grid xs={6} display={"flex"} height={"100%"}>
+        <Grid item width={"50%"} display="flex" flexDirection="column">
           <Typography variant="h4" sx={{ textAlign: "center" }}>
             {title}
           </Typography>
@@ -92,9 +97,17 @@ const GameBreakdown: React.FC<{
             </Typography>
           </Card>
         </Grid>
-        <Grid item width={"50%"} marginLeft={"5px"}>
+        <Grid
+          item
+          width={"50%"}
+          marginLeft={"5px"}
+          display="flex"
+          flexDirection="column"
+        >
           {GameComponent ? (
             <GameComponent />
+          ) : images && images.length > 0 ? (
+            <ImageSwiper images={images} isDarkMode={isDarkMode} />
           ) : (
             <img
               src={gameArt.src}

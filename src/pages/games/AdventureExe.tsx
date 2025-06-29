@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "@mui/material";
 import GameBreakdown from "../../components/pages/games/GameBreakdown";
-import conceptArt from "../../assets/pages/games/AdventureExe/adventureExe-concept-art.jpg";
+import conceptArt from "../../assets/pages/games/AdventureExe/concept-art.jpg";
 import csharplogo from "../../assets/pages/games/c-sharp-logo.png";
 import unitylogo from "../../assets/pages/games/unity-logo.png";
 import aiArt from "../../assets/pages/games/AdventureExe/ai-generated-art.png";
@@ -97,8 +97,8 @@ const AdventureExe: React.FC = () => {
             { name: unitylogo, alt: "Unity Logo", invert: true },
           ]}
           gameArt={{
-            src: "",
-            alt: "",
+            src: entries[0].image, //latest blog post image
+            alt: "Adventure.exe",
           }}
           GameComponent={AdventureExeGame}
         />
