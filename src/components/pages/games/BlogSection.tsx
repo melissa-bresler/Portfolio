@@ -34,7 +34,7 @@ const BlogSection: React.FC<{
           imageAlt={entry.imageAlt}
           switchSides={i % 2 !== 0}
           keyChanges={entry.keyChanges}
-          firstEntry={i == 0}
+          firstEntry={i === 0}
         />
       ))}
     </>
