@@ -1,6 +1,7 @@
 import styles from "../styles/Pacman.module.css";
 import React, { useRef, useEffect, useState } from "react";
 import pelletimg from "../assets/pages/about/pellet.png";
+import clsx from "clsx";
 
 interface Props {
   onPacmanClick?: () => void;
@@ -158,12 +159,10 @@ const PacmanEasterEgg: React.FC<Props> = ({ onPacmanClick, darkMode }) => {
               key={pellet.id}
               src={pelletimg}
               alt="Pellet"
-              className="invert-on-dark"
+              className={clsx("invert-on-dark", styles.pellet)}
               style={{
-                position: "absolute",
                 width: 12,
                 height: 12,
-                pointerEvents: "none",
                 transform: (() => {
                   if (!pathRef.current) return "";
                   const svgPoint =

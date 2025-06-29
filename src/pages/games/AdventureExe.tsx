@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Typography } from "@mui/material";
-import BlogEntry from "../../components/pages/games/BlogEntry";
+import { Container } from "@mui/material";
 import GameBreakdown from "../../components/pages/games/GameBreakdown";
 import conceptArt from "../../assets/pages/games/AdventureExe/adventureExe-concept-art.jpg";
 import csharplogo from "../../assets/pages/games/c-sharp-logo.png";
@@ -10,12 +9,16 @@ import proofOfConcept from "../../assets/pages/games/AdventureExe/proof-of-conce
 import initialFunctionality from "../../assets/pages/games/AdventureExe/initial-functionality.png";
 import chapterStats from "../../assets/pages/games/AdventureExe/chapter-stats-introduced.png";
 import { BackToHomeButton } from "../../components/BackToHomeButton";
+import AdventureExeGame from "../../components/pages/games/AdventureExeGame";
+import BlogSection, {
+  BlogEntryData,
+} from "../../components/pages/games/BlogSection";
 
 const AdventureExe: React.FC = () => {
   const gameDescription =
     "Step back into the nostalgic world of the 90s with Adventure.exe, a 2D game that brings the charm of vintage computers to life. Your journey begins within an old-school display, where a terminal pops up, initiating an enthralling choose-your-own-adventure game. Navigate through the story by typing your decisions, each choice leading to new paths and outcomes. As you progress, immersive pop-ups enhance the experience: inventory windows showcase icons of collected items, and glitchy hearts on the screen reflect your dwindling health in perilous areas. Dive into a retro adventure where every decision counts and the vintage aesthetic reigns supreme.";
 
-  const entries = [
+  const entries: BlogEntryData[] = [
     {
       date: "2025-03-07",
       blogText:
@@ -93,25 +96,13 @@ const AdventureExe: React.FC = () => {
             { name: csharplogo, alt: "C# Logo", invert: false },
             { name: unitylogo, alt: "Unity Logo", invert: true },
           ]}
-          playGame={true}
           gameArt={{
             src: "",
             alt: "",
           }}
+          GameComponent={AdventureExeGame}
         />
-        <div style={{ margin: 50 }} />
-        {/* TODO: Add title for blog entries section */}
-        {entries.map((entry, i) => (
-          <BlogEntry
-            key={i}
-            date={entry.date}
-            blogText={entry.blogText}
-            image={entry.image}
-            imageAlt={entry.imageAlt}
-            switchSides={i % 2 !== 0}
-            keyChanges={entry.keyChanges}
-          />
-        ))}
+        <BlogSection entries={entries} />
       </Container>
     </>
   );

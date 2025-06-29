@@ -27,3 +27,8 @@
   z-index: 10000;
   will-change: transform, background-position;
 }
+
+.pellet {
+  position: absolute;
+  pointer-events: none;
+}

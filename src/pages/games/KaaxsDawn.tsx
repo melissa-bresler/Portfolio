@@ -23,7 +23,6 @@ const KaaxsDawn: React.FC = () => {
             { name: csharplogo, alt: "C# Logo", invert: false },
             { name: unitylogo, alt: "Unity Logo", invert: true },
           ]}
-          playGame={false}
           gameArt={{
             src: keyElements,
             alt: "Screenshots from key gameplay elements",

@@ -40,11 +40,14 @@ a.custom-button {
   text-transform: none;
   transition: background-color 0.2s ease;
 
-  /* TODO: Figure out if this is correct and if so how to implement it */
-  /* .pink {
+  /* <button className="custom-button pink">Click Me</button>
+  <a className="custom-button pink">Link</a> */
+
+  button.pink,
+  button.custom-button.pink,
+  a.custom-button.pink {
     background-color: var(--pink);
   }
-} */
 }
 
 button.custom-button:hover,

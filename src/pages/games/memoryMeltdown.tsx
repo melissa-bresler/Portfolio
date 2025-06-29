@@ -19,7 +19,6 @@ const MemoryMeltdown: React.FC = () => {
           platforms={["Mobile Application - IOS"]}
           status="Complete"
           logos={[{ name: swiflogo, alt: "Swift Logo", invert: false }]}
-          playGame={false}
           gameArt={{
             src: gameScreenshots,
             alt: "Screenshots of the final game.",

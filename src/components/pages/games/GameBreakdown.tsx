@@ -1,7 +1,8 @@
 import { Grid, Typography } from "@mui/material";
 import moment from "moment";
-import UnityGame from "./UnityGame";
 import { Card } from "../../Card";
+import styles from "../../../styles/GameBreakdown.module.css";
+import clsx from "clsx";
 
 const GameBreakdown: React.FC<{
   date: string | Date;
@@ -10,7 +11,7 @@ const GameBreakdown: React.FC<{
   platforms: string[];
   status: string;
   logos: { name: string; alt: string; invert: boolean }[];
-  playGame: boolean;
+  GameComponent?: React.FC;
   gameArt: { src: string; alt: string };
 }> = ({
   date,
@@ -19,8 +20,8 @@ const GameBreakdown: React.FC<{
   platforms,
   status,
   logos,
-  playGame,
   gameArt,
+  GameComponent,
 }) => {
   const displayDate = moment(date).format("DD-MM-YYYY");
 
@@ -58,15 +59,7 @@ const GameBreakdown: React.FC<{
           >
             <Grid item width={"50%"}>
               <Card>
-                <div
-                  style={{
-                    border: "1px solid var(--lightgrey)",
-                    borderRadius: "8px",
-                    boxShadow: "0 2px 5px var(--lightestgrey)",
-                    padding: "5px",
-                    backgroundColor: "var(--white)",
-                  }}
-                >
+                <div className={styles.card}>
                   <Typography variant="overline" fontSize={16}>
                     {status}
                   </Typography>
@@ -81,8 +74,11 @@ const GameBreakdown: React.FC<{
                       <img
                         src={logo.name}
                         alt={logo.alt}
-                        className={logo.invert ? "invert-on-dark" : ""}
-                        style={{ width: "50px", height: "auto", margin: 5 }}
+                        className={clsx(
+                          styles.image,
+                          logo.invert && "invert-on-dark"
+                        )}
+                        style={{ margin: 5 }}
                       />
                     </div>
                   ))}
@@ -97,9 +93,8 @@ const GameBreakdown: React.FC<{
           </Card>
         </Grid>
         <Grid item width={"50%"} marginLeft={"5px"}>
-          {/* TODO: Make game embed flexible like a variable*/}
-          {playGame ? (
-            <UnityGame />
+          {GameComponent ? (
+            <GameComponent />
           ) : (
             <img
               src={gameArt.src}

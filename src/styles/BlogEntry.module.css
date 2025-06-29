@@ -1,0 +1,22 @@
+.card {
+  border-radius: 8px;
+  padding: 5px;
+  width: 100%;
+  margin: 20px;
+  box-shadow: 0 2px 5px var(--pink);
+}
+
+.list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  padding: 0;
+  list-style-type: none;
+  grid-row-gap: 10px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}

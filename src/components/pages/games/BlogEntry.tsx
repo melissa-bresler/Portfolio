@@ -1,6 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import moment from "moment";
 import { Card } from "../../Card";
+import styles from "../../../styles/BlogEntry.module.css";
 
 const BlogEntry: React.FC<{
   date: string | Date;
@@ -9,22 +10,26 @@ const BlogEntry: React.FC<{
   imageAlt: string;
   switchSides: boolean;
   keyChanges: string[];
-}> = ({ date, blogText, image, imageAlt, switchSides, keyChanges }) => {
+  firstEntry: boolean;
+}> = ({
+  date,
+  blogText,
+  image,
+  imageAlt,
+  switchSides,
+  keyChanges,
+  firstEntry,
+}) => {
   const displayDate = moment(date).format("DD-MM-YYYY");
 
   return (
     <>
-      <Grid xs={6} display={"flex"} sx={{ paddingTop: "5%" }}>
-        {!switchSides && (
-          <Grid item width={"50%"}>
-            <img
-              src={image}
-              alt={imageAlt}
-              style={{ width: "100%", height: "auto" }}
-            />
-          </Grid>
-        )}
-
+      <Grid
+        xs={6}
+        display={"flex"}
+        sx={{ paddingTop: !firstEntry ? "5%" : "0%" }}
+      >
+        {!switchSides && <GridImage image={image} imageAlt={imageAlt} />}
         <Grid item width={"50%"}>
           <Typography variant="h4" sx={{ textAlign: "center" }} gutterBottom>
             {displayDate}
@@ -39,29 +44,8 @@ const BlogEntry: React.FC<{
             </Typography>
           </Card>
           <Card>
-            <div
-              style={{
-                border: "1px solid var(--lightgrey)",
-                borderRadius: "8px",
-                //TODO: tested this with pink instead of grey and it's not terrible
-                boxShadow: "0 2px 5px var(--lightestgrey)",
-                padding: "5px",
-                backgroundColor: "var(--white)",
-                width: "100%",
-                margin: "20px",
-              }}
-            >
-              <ul
-                style={{
-                  width: "100%",
-                  display: "grid",
-                  gridTemplateColumns: "repeat(2, 1fr)",
-                  justifyItems: "center",
-                  padding: 0,
-                  listStyleType: "none",
-                  gridRowGap: "10px",
-                }}
-              >
+            <div className={styles.card}>
+              <ul className={styles.list}>
                 {keyChanges.map((change, index) => (
                   <div key={index}>
                     <li>{change}</li>
@@ -71,18 +55,21 @@ const BlogEntry: React.FC<{
             </div>
           </Card>
         </Grid>
-        {switchSides && (
-          <Grid item width={"50%"}>
-            <img
-              src={image}
-              alt={imageAlt}
-              style={{ width: "100%", height: "auto" }}
-            />
-          </Grid>
-        )}
+        {switchSides && <GridImage image={image} imageAlt={imageAlt} />}
       </Grid>
     </>
   );
 };
 
 export default BlogEntry;
+
+const GridImage: React.FC<{
+  image: string;
+  imageAlt: string;
+}> = ({ image, imageAlt }) => {
+  return (
+    <Grid item width={"50%"}>
+      <img src={image} alt={imageAlt} className={styles.image} />
+    </Grid>
+  );
+};

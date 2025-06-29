@@ -1,7 +1,7 @@
 import React from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
-const UnityGame: React.FC = () => {
+const AdventureExeGame: React.FC = () => {
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl: "unityBuild/Build/TestMiniGame.loader.js",
     dataUrl: "unityBuild/Build/TestMiniGame.data",
@@ -20,4 +20,4 @@ const UnityGame: React.FC = () => {
   );
 };
 
-export default UnityGame;
+export default AdventureExeGame;
